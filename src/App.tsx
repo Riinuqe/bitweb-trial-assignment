@@ -1,10 +1,11 @@
-import "./App.css";
+import "./App.scss";
+import { CardsCarousel } from "@/components/CardsCarousel";
 
 function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
+    <div className="app">
+      <h1>Hello World</h1>
+    </div>
   );
 }
 

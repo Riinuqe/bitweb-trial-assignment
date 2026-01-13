@@ -1,73 +1,142 @@
-# React + TypeScript + Vite
+# Cards Carousel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based cards carousel component built with TypeScript, Vite, and Storybook.
 
-Currently, two official plugins are available:
+## Project Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## React Compiler
+- Node.js (v20 or higher recommended)
+- npm
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Installation
 
-## Expanding the ESLint configuration
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Run the development server:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at `http://localhost:5173` (or the port shown in the terminal).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Testing
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Run tests: //TODO check these
+
+```bash
+npm test
 ```
+
+Run tests in watch mode:
+
+```bash
+npm run test:watch
+```
+
+### Linting
+
+Run ESLint:
+
+```bash
+npm run lint
+```
+
+## Storybook
+
+### Local Development
+
+Run Storybook locally:
+
+```bash
+npm run storybook
+```
+
+Storybook will be available at `http://localhost:6006`.
+
+### Running Storybook with Docker
+
+This project includes a Dockerfile that allows running Storybook without installing Node or dependencies locally.
+
+#### 1. Install Docker
+
+If you don't have Docker installed:
+
+- **macOS**: Download and install [Docker Desktop for macOS](https://www.docker.com/products/docker-desktop/)
+- **Windows**: Download and install [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/)
+- **Linux**: Follow the [Docker installation guide](https://docs.docker.com/get-docker/)
+
+After installation:
+
+1. Open Docker Desktop
+2. Wait until Docker is running (green indicator in the system tray)
+3. Verify installation in terminal:
+   ```bash
+   docker --version
+   ```
+
+#### 2. Build the Docker Image
+
+From the project root directory:
+
+```bash
+docker build -t cards-carousel-storybook .
+```
+
+This will install dependencies and prepare the Storybook environment inside Docker.
+
+#### 3. Run Storybook
+
+Start the Storybook container:
+
+```bash
+docker run -p 6006:6006 cards-carousel-storybook
+```
+
+Once the container is running, open Storybook in your browser:
+
+**http://localhost:6006**
+
+#### 4. Stop Storybook
+
+To stop the running container, press:
+
+```
+Ctrl + C
+```
+
+Or in a separate terminal, find and stop the container:
+
+```bash
+docker ps
+docker stop <container-id>
+```
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── CardsCarousel/   # Main carousel component
+│   ├── ProductCard/     # Product card component
+│   └── ArrowButton/     # Navigation arrow buttons
+├── hooks/               # Custom React hooks
+├── styles/              # Global styles and variables
+└── assets/              # Static assets (images, icons)
+```
+
+## Technologies
+
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Storybook** - Component development and documentation
+- **Sass** - CSS preprocessing
+- **Jest** - Testing framework
+- **ESLint** - Code linting
