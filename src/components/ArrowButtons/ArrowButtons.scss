@@ -1,0 +1,23 @@
+@use "@/styles/_variables.scss" as *;
+
+.arrow-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.arrow-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid $color-button-border;
+  background-color: $color-button-bg;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $color-button-hover-bg;
+    border-color: $color-button-hover-border;
+  }
+}

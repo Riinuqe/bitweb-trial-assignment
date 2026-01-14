@@ -1,0 +1,69 @@
+@use "@/styles/_variables.scss" as *;
+
+.dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  height: 40px;
+
+  &__arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+
+    img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+  }
+}
+
+.dots__dot {
+  width: 22px;
+  height: 8px;
+  border-radius: 100px;
+  border: 1px solid $color-dot-border;
+  background-color: $color-dot-bg;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $color-dot-bg;
+    border-color: $color-dot-hover-border;
+  }
+
+  &:active {
+    background-color: $color-dot-active-bg;
+    border-color: $color-dot-active-bg;
+  }
+
+  &:focus {
+    outline: 2px solid $color-dot-focus-border;
+    outline-offset: 2px;
+  }
+
+  &--active {
+    background-color: $color-dot-selected-bg;
+    border-color: $color-dot-selected-bg;
+  }
+
+  &--hover {
+    background-color: $color-dot-bg;
+    border-color: $color-dot-hover-border;
+  }
+
+  &--active-state {
+    background-color: $color-dot-active-bg;
+    border-color: $color-dot-active-bg;
+  }
+
+  &--focused {
+    outline: 2px solid $color-dot-focus-border;
+    outline-offset: 1px;
+  }
+}
