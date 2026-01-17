@@ -1,6 +1,13 @@
 export { ArrowButtons } from "./ArrowButtons/ArrowButtons";
 export type { ArrowButtonsProps } from "./ArrowButtons/ArrowButtons";
 
+export { Carousel } from "./Carousel/Carousel";
+export type {
+  CarouselProps,
+  CarouselNavigationVariant,
+  Product,
+} from "./Carousel/Carousel";
+
 export { Dots } from "./Dots/Dots";
 export type { DotsProps } from "./Dots/Dots";
 

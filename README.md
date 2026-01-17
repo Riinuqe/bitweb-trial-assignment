@@ -28,7 +28,7 @@ The application will be available at `http://localhost:5173` (or the port shown 
 
 ### Testing
 
-Run tests: //TODO check these
+Run tests:
 
 ```bash
 npm test

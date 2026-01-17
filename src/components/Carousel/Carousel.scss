@@ -1,0 +1,103 @@
+@use "@/styles/_variables.scss" as *;
+
+$mobile-breakpoint: 767px;
+
+.carousel {
+  width: 100%;
+  margin: 1rem;
+  box-sizing: border-box;
+
+  @media (max-width: $mobile-breakpoint) {
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    font-size: $font-size-header;
+    line-height: $line-height-header;
+    font-weight: $font-weight-regular;
+    margin: 0;
+    color: $color-text-primary;
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: $font-weight-regular;
+    color: $color-text-secondary;
+    margin: 0;
+  }
+
+  &__header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__container {
+    overflow: hidden;
+    width: 100%;
+    @media (max-width: $mobile-breakpoint) {
+      padding-left: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      // Ensure container doesn't exceed viewport
+      max-width: 100%;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+
+    @media (max-width: $mobile-breakpoint) {
+      will-change: scroll-position;
+    }
+  }
+
+  &__card {
+    flex-shrink: 0;
+  }
+
+  &__dots {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+
+  &__controls {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+
+    &--center {
+      justify-content: center;
+      padding-left: 0;
+    }
+  }
+}
