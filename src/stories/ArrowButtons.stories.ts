@@ -18,14 +18,6 @@ const meta = {
       action: "next clicked",
       description: "Callback function when next button is clicked",
     },
-    canGoPrevious: {
-      control: "boolean",
-      description: "Whether the previous button should be enabled",
-    },
-    canGoNext: {
-      control: "boolean",
-      description: "Whether the next button should be enabled",
-    },
     className: {
       control: "text",
       description: "Additional CSS class name",
@@ -41,8 +33,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    canGoPrevious: true,
-    canGoNext: true,
-  },
+  args: {},
 };
